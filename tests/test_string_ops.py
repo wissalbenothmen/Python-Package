@@ -9,3 +9,7 @@ def test_count_vowels():
 
 def test_capitalize_words():
     assert capitalize_words("hello world") == "Hello World"
+
+def test_capitalize_words_failing(self):
+    """Test the capitalize_words function."""
+    self.assertEqual(capitalize_words("summer"), "summer")    
