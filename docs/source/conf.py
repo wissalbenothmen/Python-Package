@@ -13,8 +13,8 @@ sys.path.insert(0, os.path.abspath('../'))
 
 # Informations sur le projet
 project = 'package_creation_tutorial'
-copyright = '2024, Votre Nom'
-author = 'Votre Nom'
+copyright = '2024, wissal'
+author = 'wissal'
 release = '0.1.0'
 
 # Extensions Sphinx
