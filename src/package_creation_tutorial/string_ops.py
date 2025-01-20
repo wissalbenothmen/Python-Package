@@ -28,3 +28,49 @@ def capitalize_words(s: str) -> str:
         str: A new string with each word capitalized.
     """
     return ' '.join(word.capitalize() for word in s.split())
+
+def remove_extra_spaces(s: str) -> str:
+    """
+    Remove extra whitespace from a string, including leading/trailing spaces
+    and multiple spaces between words.
+    Args:
+        s (str): The input string to clean.
+    Returns:
+        str: The string with normalized spacing.
+    """
+    return ' '.join(s.split())
+
+def is_palindrome(s: str) -> bool:
+    """
+    Check if a string is a palindrome (reads the same forwards and backwards).
+    Ignores case and non-alphanumeric characters.
+    Args:
+        s (str): The input string to check.
+    Returns:
+        bool: True if the string is a palindrome, False otherwise.
+    """
+    # Remove non-alphanumeric chars and convert to lowercase
+    cleaned = ''.join(char.lower() for char in s if char.isalnum())
+    return cleaned == cleaned[::-1]
+
+def to_snake_case(s: str) -> str:
+    """
+    Convert a string to snake_case format.
+    Args:
+        s (str): The input string to convert (can be space-separated or camelCase).
+    Returns:
+        str: The string in snake_case format.
+    """
+    # First replace any spaces with underscores
+    s = s.replace(' ', '_')
+    
+    # Handle camelCase by adding underscore before capital letters
+    result = s[0].lower()
+    for char in s[1:]:
+        if char.isupper():
+            result += '_' + char.lower()
+        else:
+            result += char
+    
+    return result.lower()
+
